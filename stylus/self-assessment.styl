@@ -1,0 +1,253 @@
+// stylus -r -w C:\Projects\ESG_IBM_VTL\stylus\self-assessment.styl -o C:\Projects\ESG_IBM_VTL\css
+// stylus -r -w stylus\self-assessment.styl -o css\
+
+@import 'colors.styl'
+@import 'myslider.styl'
+@import 'numberpicker.styl'
+@import 'customnumber.styl'
+@import 'customradio.styl'
+
+body
+	font-family "ibm-plex-sans","Helvetica Neue",Arial,sans-serif 
+
+.content
+	background-color $ibm-dark
+.container
+	position relative
+.btn
+	&.next
+		margin-top 3rem
+.text-gray
+	color $blue-light
+.text-detail
+	font-size 14px
+.text-all-caps
+	text-transform uppercase
+.header
+	display flex
+	flex-direction column
+	justify-content center
+	align-items center
+	.logo
+		align-self flex-end 
+		padding 15px 20px
+		width 200px
+		img
+			width 100%
+			height auto
+	.title
+		display flex
+		align-items center
+		padding 15px
+		color #f4f9f9
+		h3
+			margin: 0
+		span.info-icon:after
+			content "\f05a"
+			font-family "Font Awesome 5 Free"
+			font-weight 900
+			font-size 22px
+.pnl
+	padding-top 1.25rem
+	padding-bottom 1.25rem
+	&:not(.is-current)
+		display none
+
+#pnlQuestions
+	.container 
+		padding-top 2rem //room for progress bar
+	h2
+		text-align center
+	.main-container
+		color $white
+		.right-pane
+			position sticky
+			top 20px
+			.row
+				height 100%
+			.chart-bucket
+				width 100%
+				margin 30px 0 30px 0
+				border 1px solid $white
+				padding 1rem
+				h3
+					text-align center
+				.chart-board
+					display flex
+					flex-direction column
+					// padding 10px 20px
+					// border 1px solid $white
+					padding .5rem
+					> .row
+						margin 0
+						> div
+							display flex
+							justify-content flex-start
+							align-items flex-start
+							line-height 20px
+							.chart-board-item
+								margin-left 5px
+								&:before
+									background-color $white
+									content ""
+									width 13px
+									height 13px
+									left 0
+									top 5px
+									position absolute
+								&.hardware-cost:before
+									background-color $hardware-chart
+								&.media-cost:before
+									background-color $media-chart
+								&.software-cost:before
+									background-color $software-chart
+								&.infrastructure-cost:before
+									background-color $infrastructure-chart
+								&.maintenance-cost:before
+									background-color $maintenance-chart
+								&.staff-cost:before
+									background-color $staff-chart
+								
+
+			.output-pane
+				color $white
+				border 1px solid $white
+				padding 1rem
+				.expected-container
+					padding 20px 0 20px 0
+					&.expected-reduction-container
+						border-top 1px solid $white
+				h3
+					text-align center 
+				.output-group
+					display flex
+					justify-content space-between
+					.output-block
+						display flex
+						flex-direction column
+						.btn-download
+							display flex
+							justify-content center
+							align-items center
+							border $white
+							background $ibm-blue
+							font-size 14px
+							width fit-content
+							padding 10px 20px
+							cursor pointer
+							border-radius 5px
+							width 80%
+							text-align center
+							align-self center
+							color $white
+						// .btn-download:after
+						// 	content "\f063"
+						// 	font-family "Font Awesome 5 Free"
+						// 	font-weight 900
+						// 	padding-left 9px
+						// 	vertical-align middle
+						// 	font-size 18px
+						h1.output-value-box
+							font-weight bold
+							text-align center
+							cursor pointer
+						>span
+							text-align center 
+
+.question-block
+	margin 30px 0
+	&.not-answered
+		box-shadow 0 0 10px #ff8200
+	+ .question-block
+		margin-top 4rem
+	h3
+		position relative
+		margin-bottom 2rem
+		padding-right 120px
+		line-height 1.2
+		font-size 1.3rem 
+		div.question-desc
+			margin-top 5px
+			text-transform none
+			line-height 1.2
+			color $ibm-gray
+			font-size 60%
+		span
+			display block
+			position absolute
+			width 50px
+			height 50px
+			background-repeat no-repeat
+			background-position center
+			background-size 100%
+			&:before
+				content ""
+				font-family "Font Awesome 5 Free"
+				font-weight 900
+				vertical-align middle
+				font-size 40px
+				position absolute
+				color $ibm-gray 
+				top -3px
+			&.icon-capacity:before
+				content "\f233"
+			&.icon-average-backup:before
+				content "\f2f2"
+			&.icon-peak-backup:before
+				content "\f135"
+			&.icon-online-days:before
+				content "\f274"
+	h4
+		margin-top 3rem
+	+ div.cf:last-child
+		text-align right //get the "next" and "results" btns to be right-aligned
+	.number-select-container
+		display flex
+		justify-content space-between
+		align-items center
+.red
+	color #ff0000
+.orange
+	color #ff671f
+
+@media (min-width 641px)
+	.question-block
+		h3
+			padding-left 65px
+			span
+				top 0
+				left 0
+	
+@media (max-width 640px)
+	.question-block
+		padding-left 90px
+		h3
+			span
+				top 0
+				right 100%
+				margin-right 2rem
+@media (max-width 768px)
+	#pnlQuestions 
+		.main-container 
+			.right-pane
+				max-height none
+				position unset
+				.output-pane
+					// border none
+					margin-top 50px
+				.chart-bucket
+					margin-top 50px
+@media (max-width 992px) and (min-width 768px)
+	.output-block
+		.output-value-box
+			font-size 1.7rem
+		>span
+			font-size 14px
+
+@media (max-width 500px)
+	.output-group
+		flex-direction column 
+
+/* Customize the width of Bootstrap tooltip */
+.tooltip-inner
+	max-width 350px

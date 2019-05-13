@@ -1,0 +1,281 @@
+﻿<!doctype html>
+<html class="no-js">
+
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+    <script>
+        (function (html) {
+            html.className = html.className.replace(/\bno-js\b/, 'js')
+        })(document.documentElement);
+    </script>
+    <title>IBM VTL Calculator</title>
+    <meta name="description" content="IBM VTL Calculator" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/10.0.2/css/bootstrap-slider.min.css"
+    />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css" integrity="sha384-O8whS3fhG2OnA5Kas0Y9l3cfpmYjapjI0E4theH4iuMD+pLhbf6JI0jIMfYcK3yZ"
+        crossorigin="anonymous">
+    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/britecharts/dist/css/britecharts.min.css" type="text/css"> -->
+    <link rel="stylesheet" href="britecharts/britecharts.min.css" type="text/css">
+    <link rel="stylesheet" id="self-assessment-css" href="css/self-assessment.css" type="text/css" media="all" />
+
+</head>
+
+<body>
+    <!-- Content -->
+    <section class="content">
+        <div id="pnlQuestions" class="inner content-questions">
+            <div class="container">
+                <div class="header">
+                    <div class="logo">
+                        <a class="esg" href="http://www.esg-global.com/" target="_blank">
+                            <img src="images/esg-logo.svg" width="80" alt="ESG logo">
+                        </a>
+                    </div>
+                    <div class="title">
+                        <h3>How much could your organization save with an IBM Virtual Tape Library?
+                            <span class="info-icon" data-toggle="tooltip" data-html="true" title="This interactive calculator is designed to help IT organizations determine the relative costs and benefits of deploying an IBM Virtual Tape Library compared to an all-tape solution or VTL solutions from one or more other leading backup technology providers.<br/><br/>The comparative analysis is based upon ESG's knowledge of multiple solutions available in the market today - along with in-depth primary and secondary research - to provide users with a comprehensive picture of the costs and benefits to be considered when evaluating IBM Virtual Tape Solutions."></span>
+                        </h3>
+
+                    </div>
+                </div>
+
+                <div class="main-container">
+                    <div class="row">
+                        <div id="questionsIndividual" class="col-sm-12 col-md-6 col-lg-6">
+                            <div class="pnl page-1 is-current">
+                                <h4>Estimate your potential
+                                    <span class="year-value-label"></span>-Year savings based on ESG’s validated TCO model by adjusting the sliders below.</h4>
+
+                                <div class="question-block">
+                                    <h3 class="question-title">Online Protected Capacity
+                                        <br />
+                                        <div class="question-desc">Total Amount of Protected Mainframe Capacity</div>
+                                        <span class="icon-capacity" data-toggle="tooltip" data-placement="right" title="Total mainframe online protected capacity.  Affects cost of tape and alternative VTL solution based on per-TB costing of required backup software."></span>
+                                    </h3>
+                                    <div class="range-slider">
+                                        <input type="text" data-slider-min="100" data-slider-max="1800" data-slider-value="300" data-slider-step="1" />
+
+                                        <div class="plusminus" data-number-step="100">
+                                            <button></button>
+                                            <div class="value">
+                                                <span class="value-number" name="valuePicker">0</span>
+                                                <label>TB</label>
+                                            </div>
+                                            <button></button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="question-block">
+                                    <h3 class="question-title">Average Backup Throughput Required
+                                        <br />
+                                        <div class="question-desc">Average backup throughput required at non-peak times</div>
+                                        <span class="icon-average-backup" data-toggle="tooltip" data-placement="right" title="Increasing the number of days of online data increases the capacity required for VTLs."></span>
+                                    </h3>
+
+                                    <div class="range-slider">
+                                        <input type="text" data-slider-min="0.1" data-slider-max="7.2" data-slider-value="1.4" data-slider-step="0.1" />
+
+                                        <div class="plusminus" data-number-step="0.1">
+                                            <button></button>
+                                            <div class="value">
+                                                <span class="value-number" name="valuePicker">0</span>
+                                                <label>TB/Hr</label>
+                                            </div>
+                                            <button></button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="question-block">
+                                    <h3 class="question-title">Peak Backup Throughput Required
+                                        <br />
+                                        <div class="question-desc">Highest throughput required for peak backup workloads.</div>
+                                        <span class="icon-peak-backup" data-toggle="tooltip" data-placement="right" title="Peak throughput is uesed to size the required capacity and performance requirments for tape (more parallel tapes drives required) and VTL solutions (Higher cost of SW licenses additional hardware cost)."></span>
+                                    </h3>
+
+                                    <div class="range-slider">
+                                        <input type="text" data-slider-min="1" data-slider-max="7" data-slider-value="4" data-slider-step="1" />
+
+                                        <div class="plusminus" data-number-step="1">
+                                            <button></button>
+                                            <div class="value">
+                                                <span class="value-number" name="valuePicker">0</span>
+                                                <label>TB/Hr</label>
+                                            </div>
+                                            <button></button>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                                <div class="question-block">
+                                    <h3 class="question-title">Days of Online Data to Keep in VTL
+                                        <br />
+                                        <div class="question-desc">Total Number of days of backup data to be stored in VTL</div>
+                                        <span class="icon-online-days" data-toggle="tooltip" data-placement="right" title="Increasing the number of days of online data increases the capacity required for VTLs."></span>
+                                    </h3>
+                                    <div class="range-slider">
+                                        <input type="text" data-slider-min="30" data-slider-max="365" data-slider-value="90" data-slider-step="1" />
+
+                                        <div class="plusminus" data-number-step="30">
+                                            <button></button>
+                                            <div class="value">
+                                                <span class="value-number" name="valuePicker">0</span>
+                                                <label>Days</label>
+                                            </div>
+                                            <button></button>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                            </div>
+                        </div>
+
+                        <div class="col-sm-12 col-md-6 col-lg-6 right-pane">
+                            <div class="">
+                                <div class="chart-bucket">
+                                    <h3>Estimated
+                                        <span class="year-value-label"></span>-Year Total Cost of Ownership</h3>
+                                    <div class="britechart js-stacked-bar-chart-tooltip-container"></div>
+                                    <div class="chart-board">
+                                        <div class="row">
+                                            <div class="col-sm-6">
+                                                <span class="chart-board-item hardware-cost">Hardware Cost</span>
+                                            </div>
+
+                                            <div class="col-sm-6">
+                                                <span class="chart-board-item media-cost">Media Cost</span>
+                                            </div>
+
+                                            <div class="col-sm-6">
+                                                <span class="chart-board-item software-cost">Software Cost</span>
+                                            </div>
+
+                                            <div class="col-sm-6">
+                                                <span class="chart-board-item infrastructure-cost">Infrastructure</span>
+                                            </div>
+
+                                            <div class="col-sm-6">
+                                                <span class="chart-board-item maintenance-cost">Maintenance and Support</span>
+                                            </div>
+
+                                            <div class="col-sm-6">
+                                                <span class="chart-board-item staff-cost">Staff & Professional Services</span>
+                                            </div>
+
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="output-pane">
+                                    <div class="expected-container expected-saving-container">
+                                        <h3>Expected
+                                            <span class="year-value-label"></span>-Year Savings</h3>
+                                        <div class="output-group">
+                                            <div class="output-block">
+                                                <h1 class="output-value-box">$
+                                                    <span id="saving-tape-value" data-toggle="tooltip" data-placement="bottom" title=""></span>
+                                                </h1>
+                                                <span class="">versus Tape Solutions</span>
+                                            </div>
+                                            <div class="output-block">
+                                                <h1 class="output-value-box">$
+                                                    <span id="saving-alt-vtl-value" data-toggle="tooltip" data-placement="bottom" title=""></span>
+                                                </h1>
+                                                <span class="">versus Alternative VTLs</span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+
+                                    <div class="expected-container expected-reduction-container">
+                                        <h3>Expected
+                                            <span class="year-value-label"></span>-Year TCO Reduction</h3>
+                                        <div class="output-group">
+                                            <div class="output-block">
+                                                <h1 class="output-value-box">
+                                                    <span id="tco-tape-value">62</span>%</h1>
+                                                <span class="">versus Tape Solutions</span>
+                                            </div>
+                                            <div class="output-block">
+                                                <h1 class="output-value-box">
+                                                    <span id="tco-alt-vtl-value">62</span>%</h1>
+                                                <span class="">versus Alternative VTLs</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="expected-container">
+                                        <div class="output-group">
+                                            <div class="output-block">
+                                                <a class="btn-download" href="//www.ibm.com/us-en/marketplace/ts7760#product-header-top
+                                                ">
+                                                    To learn more about IBM VTL Technologies and to read the ESG Economic Validation Report please Click Here!
+                                                </a>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+                crossorigin="anonymous"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+                crossorigin="anonymous"></script>
+            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+                crossorigin="anonymous"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/10.0.2/bootstrap-slider.min.js"></script>
+
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.5.0/d3.min.js"></script>
+            <script type="text/javascript" src="britecharts/britecharts.min.js"></script>
+            <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/britecharts/2.9.2/bundled/britecharts.min.js"></script> -->
+
+            <script type="text/javascript" src="js/consts.js"></script>
+            <script type="text/javascript" src="js/graph.js"></script>
+            <script type="text/javascript" src="js/calculate.js"></script>
+            <script type="text/javascript" src="js/myslider.js"></script>
+            <script type="text/javascript" src="js/numberpicker.js"></script>
+            <script type="text/javascript" src="js/spinner.js"></script>
+
+
+            <script type="text/javascript">
+                (function ($) {
+
+
+                    $(document).ready(function () {
+                        // Initialize the tooltips
+                        $('[data-toggle="tooltip"]').tooltip();
+
+                        // Initially set the default value for sliders to the labels
+                        $('.range-slider>input[type="text"]').each(function () {
+                            sliderValue = $(this).slider().data().sliderValue;
+                            $(this).siblings(".plusminus").find("span[name='valuePicker']").text(
+                                sliderValue)
+                        });
+
+                        // Update texts with constant variables
+                        $("span.year-value-label").text(Number_Of_Years);
+
+                        // First start to Calculate
+                        calculateResults();
+
+                    });
+
+                })(jQuery);
+            </script>
+        </div>
+    </section>
+</body>
+
+</html>

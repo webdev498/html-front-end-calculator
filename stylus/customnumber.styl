@@ -1,0 +1,65 @@
+
+.number-pickup input[type=number]::-webkit-inner-spin-button,
+.number-pickup input[type=number]::-webkit-outer-spin-button
+	-webkit-appearance: none
+	margin: 0
+
+
+.number-pickup input[type=number]
+	-moz-appearance: textfield
+
+.number-pickup 
+	position relative
+	height 40px
+	width 200px
+
+.number-pickup input
+	height 100%
+	background $blue-lighter
+	border 1px solid $blue-lighter
+	border-radius 5px
+	font-size 15px
+	color $white
+	padding-left 20px
+	width 100%
+	padding-right 27px
+    &:focus
+		outline: none
+
+.number-pickup .input-button
+	position absolute
+	height 50%
+	width 35px
+	color $gray-white
+	text-align center
+	line-height 27px
+	cursor pointer
+	user-select none
+	right 10px
+	display: flex;
+	justify-content: center;
+	&:hover 
+		color $white
+
+	&.add 
+		top 0
+		align-items: flex-start;
+		&:after
+			content '\f0d8'
+			font-family "Font Awesome 5 Free"
+			font-weight 900
+			padding-left 0
+			vertical-align middle
+			font-size 18px
+	&.remove 
+		bottom 0
+		align-items: flex-end;
+		&:after
+			content '\f0d7'
+			font-family "Font Awesome 5 Free"
+			font-weight 900
+			padding-left 0
+			vertical-align middle
+			font-size 18px
+
+

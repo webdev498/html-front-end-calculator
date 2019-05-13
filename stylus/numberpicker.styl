@@ -1,0 +1,66 @@
+.plusminus
+    position absolute !important
+    top -100px
+    right 0
+    display flex
+    flex-direction column
+    position relative
+    overflow hidden
+    min-width 120px
+    button
+        display block
+        height 25px
+        margin 0
+        padding 0
+        border 0
+        color $white
+        background-color transparent
+        font-size 30px
+        line-height 1
+        cursor pointer
+        color $ibm-light-blue
+        &:focus
+            outline none
+        
+        &:disabled
+            color #ccc
+            cursor default
+            &:before
+                color $blue-light 
+        &:last-child
+            bottom 0
+            &:before
+                content "-"
+        &:first-child
+            top 0
+            &:before
+                content "+"
+    div.value
+        display flex
+        justify-content center
+        align-items flex-end
+
+        label
+            margin-left 3px
+            margin-bottom 5px
+  
+        span.value-number
+            background transparent
+            margin 0
+            border 0
+            font-size 30px
+            font-weight bold
+            text-align center
+            color $white
+            -moz-appearance:textfield
+
+            &::-webkit-outer-spin-button,
+            &::-webkit-inner-spin-button
+                -webkit-appearance none
+                margin 0
+       
+     
+    
+   
+  
+ 

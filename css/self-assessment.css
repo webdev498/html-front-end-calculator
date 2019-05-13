@@ -1,0 +1,506 @@
+.range-slider {
+  position: relative;
+}
+.range-slider .slider {
+  width: 100%;
+}
+.range-slider .slider .slider-selection {
+  background-color: #fff;
+}
+.range-slider .slider .slider-track-high {
+  background-color: #7e8e9b;
+}
+.range-slider .slider .slider-handle {
+  background: #38464f;
+  border: 3px solid #fff;
+}
+.range-slider .slider .slider-track {
+  height: 5px;
+  margin-top: -3px;
+}
+.range-slider .slider .tooltip {
+  display: none;
+}
+.plusminus {
+  position: absolute !important;
+  top: -100px;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+  min-width: 120px;
+}
+.plusminus button {
+  display: block;
+  height: 25px;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  color: #fff;
+  background-color: transparent;
+  font-size: 30px;
+  line-height: 1;
+  cursor: pointer;
+  color: #7cc7ff;
+}
+.plusminus button:focus {
+  outline: none;
+}
+.plusminus button:disabled {
+  color: #ccc;
+  cursor: default;
+}
+.plusminus button:disabled:before {
+  color: #7e8e9b;
+}
+.plusminus button:last-child {
+  bottom: 0;
+}
+.plusminus button:last-child:before {
+  content: "-";
+}
+.plusminus button:first-child {
+  top: 0;
+}
+.plusminus button:first-child:before {
+  content: "+";
+}
+.plusminus div.value {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+.plusminus div.value label {
+  margin-left: 3px;
+  margin-bottom: 5px;
+}
+.plusminus div.value span.value-number {
+  background: transparent;
+  margin: 0;
+  border: 0;
+  font-size: 30px;
+  font-weight: bold;
+  text-align: center;
+  color: #fff;
+  -moz-appearance: textfield;
+}
+.plusminus div.value span.value-number::-webkit-outer-spin-button,
+.plusminus div.value span.value-number::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.number-pickup input[type=number]::-webkit-inner-spin-button,
+.number-pickup input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.number-pickup input[type=number] {
+  -moz-appearance: textfield;
+}
+.number-pickup {
+  position: relative;
+  height: 40px;
+  width: 200px;
+}
+.number-pickup input {
+  height: 100%;
+  background: #6a7c89;
+  border: 1px solid #6a7c89;
+  border-radius: 5px;
+  font-size: 15px;
+  color: #fff;
+  padding-left: 20px;
+  width: 100%;
+  padding-right: 27px;
+}
+:focus {
+  outline: none;
+}
+.number-pickup .input-button {
+  position: absolute;
+  height: 50%;
+  width: 35px;
+  color: #e3e3e3;
+  text-align: center;
+  line-height: 27px;
+  cursor: pointer;
+  user-select: none;
+  right: 10px;
+  display: flex;
+  justify-content: center;
+}
+.number-pickup .input-button:hover {
+  color: #fff;
+}
+.number-pickup .input-button.add {
+  top: 0;
+  align-items: flex-start;
+}
+.number-pickup .input-button.add:after {
+  content: '\f0d8';
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  padding-left: 0;
+  vertical-align: middle;
+  font-size: 18px;
+}
+.number-pickup .input-button.remove {
+  bottom: 0;
+  align-items: flex-end;
+}
+.number-pickup .input-button.remove:after {
+  content: '\f0d7';
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  padding-left: 0;
+  vertical-align: middle;
+  font-size: 18px;
+}
+.selection-container {
+  display: flex;
+  margin-bottom: 20px;
+}
+.checkbox-container {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 16px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.checkbox-container:hover input ~ .checkmark {
+  background-color: #e3e3e3;
+  border: none;
+}
+.checkbox-container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+.checkbox-container input:checked ~ .checkmark {
+  background-color: #57a617;
+  border: none;
+}
+.checkbox-container input:checked ~ .checkmark:after {
+  display: block;
+}
+.checkbox-container .checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 25px;
+  width: 25px;
+  border-radius: 50%;
+  border: 1px solid #6a7c89;
+}
+.checkbox-container .checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+  top: 4px;
+  left: 9px;
+  width: 8px;
+  height: 13px;
+  border: solid #fff;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+body {
+  font-family: "ibm-plex-sans", "Helvetica Neue", Arial, sans-serif;
+}
+.content {
+  background-color: #323232;
+}
+.container {
+  position: relative;
+}
+.btn.next {
+  margin-top: 3rem;
+}
+.text-gray {
+  color: #7e8e9b;
+}
+.text-detail {
+  font-size: 14px;
+}
+.text-all-caps {
+  text-transform: uppercase;
+}
+.header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.header .logo {
+  align-self: flex-end;
+  padding: 15px 20px;
+  width: 200px;
+}
+.header .logo img {
+  width: 100%;
+  height: auto;
+}
+.header .title {
+  display: flex;
+  align-items: center;
+  padding: 15px;
+  color: #f4f9f9;
+}
+.header .title h3 {
+  margin: 0;
+}
+.header .title span.info-icon:after {
+  content: "\f05a";
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  font-size: 22px;
+}
+.pnl {
+  padding-top: 1.25rem;
+  padding-bottom: 1.25rem;
+}
+.pnl:not(.is-current) {
+  display: none;
+}
+#pnlQuestions .container {
+  padding-top: 2rem;
+}
+#pnlQuestions h2 {
+  text-align: center;
+}
+#pnlQuestions .main-container {
+  color: #fff;
+}
+#pnlQuestions .main-container .right-pane {
+  position: sticky;
+  top: 20px;
+}
+#pnlQuestions .main-container .right-pane .row {
+  height: 100%;
+}
+#pnlQuestions .main-container .right-pane .chart-bucket {
+  width: 100%;
+  margin: 30px 0 30px 0;
+  border: 1px solid #fff;
+  padding: 1rem;
+}
+#pnlQuestions .main-container .right-pane .chart-bucket h3 {
+  text-align: center;
+}
+#pnlQuestions .main-container .right-pane .chart-bucket .chart-board {
+  display: flex;
+  flex-direction: column;
+  padding: 0.5rem;
+}
+#pnlQuestions .main-container .right-pane .chart-bucket .chart-board > .row {
+  margin: 0;
+}
+#pnlQuestions .main-container .right-pane .chart-bucket .chart-board > .row > div {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  line-height: 20px;
+}
+#pnlQuestions .main-container .right-pane .chart-bucket .chart-board > .row > div .chart-board-item {
+  margin-left: 5px;
+}
+#pnlQuestions .main-container .right-pane .chart-bucket .chart-board > .row > div .chart-board-item:before {
+  background-color: #fff;
+  content: "";
+  width: 13px;
+  height: 13px;
+  left: 0;
+  top: 5px;
+  position: absolute;
+}
+#pnlQuestions .main-container .right-pane .chart-bucket .chart-board > .row > div .chart-board-item.hardware-cost:before {
+  background-color: #6aedc7;
+}
+#pnlQuestions .main-container .right-pane .chart-bucket .chart-board > .row > div .chart-board-item.media-cost:before {
+  background-color: #39c2c9;
+}
+#pnlQuestions .main-container .right-pane .chart-bucket .chart-board > .row > div .chart-board-item.software-cost:before {
+  background-color: #ffce00;
+}
+#pnlQuestions .main-container .right-pane .chart-bucket .chart-board > .row > div .chart-board-item.infrastructure-cost:before {
+  background-color: #f866b9;
+}
+#pnlQuestions .main-container .right-pane .chart-bucket .chart-board > .row > div .chart-board-item.maintenance-cost:before {
+  background-color: #ffa71a;
+}
+#pnlQuestions .main-container .right-pane .chart-bucket .chart-board > .row > div .chart-board-item.staff-cost:before {
+  background-color: #998ce3;
+}
+#pnlQuestions .main-container .right-pane .output-pane {
+  color: #fff;
+  border: 1px solid #fff;
+  padding: 1rem;
+}
+#pnlQuestions .main-container .right-pane .output-pane .expected-container {
+  padding: 20px 0 20px 0;
+}
+#pnlQuestions .main-container .right-pane .output-pane .expected-container.expected-reduction-container {
+  border-top: 1px solid #fff;
+}
+#pnlQuestions .main-container .right-pane .output-pane h3 {
+  text-align: center;
+}
+#pnlQuestions .main-container .right-pane .output-pane .output-group {
+  display: flex;
+  justify-content: space-between;
+}
+#pnlQuestions .main-container .right-pane .output-pane .output-group .output-block {
+  display: flex;
+  flex-direction: column;
+}
+#pnlQuestions .main-container .right-pane .output-pane .output-group .output-block .btn-download {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: #fff;
+  background: #2c89ca;
+  font-size: 14px;
+  width: fit-content;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 5px;
+  width: 80%;
+  text-align: center;
+  align-self: center;
+  color: #fff;
+}
+#pnlQuestions .main-container .right-pane .output-pane .output-group .output-block h1.output-value-box {
+  font-weight: bold;
+  text-align: center;
+  cursor: pointer;
+}
+#pnlQuestions .main-container .right-pane .output-pane .output-group .output-block >span {
+  text-align: center;
+}
+.question-block {
+  margin: 30px 0;
+}
+.question-block.not-answered {
+  box-shadow: 0 0 10px #ff8200;
+}
+.question-block + .question-block {
+  margin-top: 4rem;
+}
+.question-block h3 {
+  position: relative;
+  margin-bottom: 2rem;
+  padding-right: 120px;
+  line-height: 1.2;
+  font-size: 1.3rem;
+}
+.question-block h3 div.question-desc {
+  margin-top: 5px;
+  text-transform: none;
+  line-height: 1.2;
+  color: #aeaeae;
+  font-size: 60%;
+}
+.question-block h3 span {
+  display: block;
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100%;
+}
+.question-block h3 span:before {
+  content: "";
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  vertical-align: middle;
+  font-size: 40px;
+  position: absolute;
+  color: #aeaeae;
+  top: -3px;
+}
+.question-block h3 span.icon-capacity:before {
+  content: "\f233";
+}
+.question-block h3 span.icon-average-backup:before {
+  content: "\f2f2";
+}
+.question-block h3 span.icon-peak-backup:before {
+  content: "\f135";
+}
+.question-block h3 span.icon-online-days:before {
+  content: "\f274";
+}
+.question-block h4 {
+  margin-top: 3rem;
+}
+.question-block + div.cf:last-child {
+  text-align: right;
+}
+.question-block .number-select-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.red {
+  color: #f00;
+}
+.orange {
+  color: #ff671f;
+}
+@media (min-width: 641px) {
+  .question-block h3 {
+    padding-left: 65px;
+  }
+  .question-block h3 span {
+    top: 0;
+    left: 0;
+  }
+}
+@media (max-width: 640px) {
+  .question-block {
+    padding-left: 90px;
+  }
+  .question-block h3 span {
+    top: 0;
+    right: 100%;
+    margin-right: 2rem;
+  }
+}
+@media (max-width: 768px) {
+  #pnlQuestions .main-container .right-pane {
+    max-height: none;
+    position: unset;
+  }
+  #pnlQuestions .main-container .right-pane .output-pane {
+    margin-top: 50px;
+  }
+  #pnlQuestions .main-container .right-pane .chart-bucket {
+    margin-top: 50px;
+  }
+}
+@media (max-width: 992px) and (min-width: 768px) {
+  .output-block .output-value-box {
+    font-size: 1.7rem;
+  }
+  .output-block >span {
+    font-size: 14px;
+  }
+}
+@media (max-width: 500px) {
+  .output-group {
+    flex-direction: column;
+  }
+}
+/* Customize the width of Bootstrap tooltip */
+.tooltip-inner {
+  max-width: 350px;
+}
